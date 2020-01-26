@@ -1,1 +1,1 @@
-https://github.com/barrylyung/cs4500/tree/master/hw1
+https://github.com/barrylyung/a1p2.git
