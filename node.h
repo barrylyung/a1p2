@@ -1,12 +1,12 @@
 //Node class to implement a map
 class Node {
 public:
-  String* key_;
+  Object* key_;
   Object* value_;
   Node* next_;
 
   Node() {
-    key_ = new String();
+    key_ = new Object();
     value_ = new Object();
     next_ = NULL;
   }
@@ -18,7 +18,7 @@ public:
   }
   //Gets the key of this node
   //Returns: String*
-  String* getKey() {
+  Object* getKey() {
     return key_;
   }
 
