@@ -10,7 +10,7 @@ public:
   Map(){
     elems_ = NULL;
     len_ = 0;
-    capacity_ = 0;
+    capacity_ = 10;
   }
   //Adds an element to the map as a node pair
   void addElement(Node* elem) {
