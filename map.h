@@ -1,5 +1,6 @@
 class Map {
 public:
+  size_t capacity_;
   //Size of the current map
   size_t len_;
   //Array of Node pointers in the map
@@ -9,6 +10,7 @@ public:
   Map(){
     elems_ = NULL;
     len_ = 0;
+    capacity_ = 0;
   }
   //Adds an element to the map as a node pair
   void addElement(Node* elem) {
