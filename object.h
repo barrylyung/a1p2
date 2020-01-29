@@ -1,25 +1,29 @@
+//lang::CwC
+//credit to: @chasebish
+//original repo url: https://github.com/chasebish/cwc_object_string
 #pragma once
-#include <iostream>
-#include <stdio.h>
 
+#include <cstdlib>
+
+/**
+ * A class that represents the top of the object hierarchy.
+ * author: chasebish */
 class Object {
-  public:
-    size_t hash_;
+public:
+  /** CONSTRUCTORS & DESTRUCTORS **/
 
-    Object() {
-    }
+  /* Default Object constructor */
+  Object();
 
-    virtual bool equals(Object *other) {
-      return this == other;
-    }
+  /* Default Object destructor, to be overriden by subclasses */
+  virtual ~Object();
 
-    size_t hash() {
-      if (hash_ == 0) hash_ = hash_me();
 
-      return hash_;
-    }
+  /** VIRTUAL METHODS **/
 
-    size_t hash_me() {
-      return reinterpret_cast<size_t>(this);
-    }
+  /* Returns whether two objects are equal, to be overriden by subclasses */
+  virtual bool equals(Object* const obj);
+
+  /* Returns an object's hash value. Identical objects should have identical hashes */
+  virtual size_t hash();
 };

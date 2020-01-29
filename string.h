@@ -1,61 +1,51 @@
-class String: public Object {
-  public:
-    const char* val_;
-    size_t len_;
+//lang::CwC
+//credit to: @chasebish
+//original repo url: https://github.com/chasebish/cwc_object_string
+#pragma once
 
-    String(){
-      val_ = "";
-      len_ = 0;
-    }
+#include "object.h"
+#include <cstdlib>
+#include <cstring>
+#include <cstdio> 
 
-    String(const char* val) {
-      val_ = val;
-      len_ = strlen(val);
-    }
+/**
+ * An immutable String class representing a char*
+ * author: chasebish */
+class String : public Object {
+public:
+  /** CONSTRUCTORS & DESTRUCTORS **/
 
-    ~String() {
-      delete [] val_;
-     }
+  /* Creates a String copying s */
+  String(const char* s);
 
-     size_t hash() {
-       if (hash_ == 0) hash_ = hash_me();
-       return hash_;
-     }
+  /* Copies a String copying the value from s */
+  String(String* const s);
 
-     size_t hash_me() {
-       size_t hashNum = 0;
-       for(size_t i = 0; i < len_; i++){
-         hashNum += size_t(val_[i]);
-       }
-       return hashNum;
-     }
+  /* Clears String from memory */
+  ~String();
 
 
-     bool equals(Object* o) {
-       if(o == nullptr) {
-         return false;
-       }
-       String* temp = dynamic_cast<String*> (o);
-       if(o == nullptr) {
-         return false;
-       }
-       return hash_ == temp -> hash_;
-     }
+  /** INHERITED METHODS **/
 
-    char get(size_t i) {
-      assert(i < len_);
-      return val_[i];
-    }
+  /* Inherited from Object, generates a hash for a String */
+  size_t hash();
 
-    String* concat(String* val) {
-      size_t newLen = len_ + val -> len_;
-      char* newString = new char[newLen];
-      for(size_t i = 0; i < len_; i++){
-        newString[i] = val_[i];
-      }
-      for(size_t j = 0; j < val->len_; j++) {
-        newString[j + len_] = val -> val_[j];
-      }
-      return new String(newString);
-    }
+  /* Inherited from Object, checks equality between an String and an Object */
+  bool equals(Object* const obj);
+
+
+  /** STRING METHODS **/
+  
+  /** Compares strings based on alphabetical order
+   * < 0 -> this String is less than String s
+   * = 0 -> this String is equal to String s
+   * > 0 -> this String is greater than String s
+   */
+  int cmp(String* const s);
+
+  /* Creates a new String by combining two existing Strings */
+  String* concat(String* const s);
+
+  /* Returns the current length of the String */
+  size_t size();
 };
