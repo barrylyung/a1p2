@@ -1,4 +1,6 @@
 //lang::CwC
+//credit to: @chasebish
+//original repo url: https://github.com/chasebish/cwc_object_string
 #pragma once
 
 #include <cstdlib>
