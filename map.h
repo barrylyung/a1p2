@@ -20,7 +20,7 @@ public:
   void removeElement(Object* key);
 
   //Gets the value of the key
-  void getValue(Object* key);
+  Object* getValue(Object* key);
 
   //Gets the length of the map
   void getLength();
