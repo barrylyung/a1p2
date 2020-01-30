@@ -1,31 +1,34 @@
-class Map {
+#pragma once;
+#include "object.h"
+
+class Map : public Object {
 public:
-  size_t capacity_;
-  //Size of the current map
-  size_t len_;
-  //Array of Node pointers in the map
-  Node** elems_;
 
   //Constructor
-  Map(){
-    elems_ = NULL;
-    len_ = 0;
-    capacity_ = 10;
-  }
-  //Adds an element to the map as a node pair
-  void addElement(Node* elem) {
-  }
+  Map();
+
+  //Destructor
+  ~Map();
+
+  //Adds a pair key and value to the map
+  void addElement(Object* key, Object* value);
 
   //Removed the given key from the map
-  void removeElement(Object* key);
+  Object* removeElement(Object* key);
 
   //Gets the value of the key
   Object* getValue(Object* key);
 
-  //Gets the length of the map
-  void getLength();
+  //Gets the actual number of key/pair values in map
+  size_t getLength();
+
+  //Gets the capacity of the map
+  size_t getCapacity();
 
   //Checks is the key is in the map
-  bool isKeyIn(String* e);
+  bool isKeyIn(Object* key);
+
+  //Changed the capacity of the map
+  void resizeCapacity();
 
 };

@@ -22,7 +22,7 @@ public:
   /** VIRTUAL METHODS **/
 
   /* Returns whether two objects are equal, to be overriden by subclasses */
-  virtual bool equals(Object* const obj);
+  virtual bool equals(Object* obj);
 
   /* Returns an object's hash value. Identical objects should have identical hashes */
   virtual size_t hash();

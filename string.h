@@ -16,10 +16,10 @@ public:
   /** CONSTRUCTORS & DESTRUCTORS **/
 
   /* Creates a String copying s */
-  String(const char* s);
+  String(char* s);
 
   /* Copies a String copying the value from s */
-  String(String* const s);
+  String(String* s);
 
   /* Clears String from memory */
   ~String();
@@ -31,7 +31,7 @@ public:
   size_t hash();
 
   /* Inherited from Object, checks equality between an String and an Object */
-  bool equals(Object* const obj);
+  bool equals(Object* obj);
 
 
   /** STRING METHODS **/
@@ -41,10 +41,10 @@ public:
    * = 0 -> this String is equal to String s
    * > 0 -> this String is greater than String s
    */
-  int cmp(String* const s);
+  int cmp(String* s);
 
   /* Creates a new String by combining two existing Strings */
-  String* concat(String* const s);
+  String* concat(String* s);
 
   /* Returns the current length of the String */
   size_t size();
