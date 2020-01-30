@@ -11,7 +11,7 @@ public:
     next_ = NULL;
   }
   //Node contructor
-  Node(String* key, Object* value) {
+  Node(Object* key, Object* value) {
     key_ = key;
     value_ = value;
     next_ = NULL;
