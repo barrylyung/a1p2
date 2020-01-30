@@ -16,8 +16,15 @@ public:
     value_ = value;
     next_ = NULL;
   }
+
+  Node(String* key, String* value) {
+    key_ = key;
+    value_ = value;
+    next_ = NULL;
+  }
+
   //Gets the key of this node
-  //Returns: String*
+  //Returns: Object*
   Object* getKey() {
     return key_;
   }
