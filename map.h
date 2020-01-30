@@ -1,21 +1,14 @@
 class Map {
 public:
-  size_t capacity_;
-  //Size of the current map
-  size_t len_;
-  //Array of Node pointers in the map
-  Node** elems_;
-
   //Constructor
-  Map(){
-    elems_ = NULL;
-    len_ = 0;
-    capacity_ = 10;
-  }
+  Map(){}
+  
+  // Destructor
+  ~Map(){}
+  
   //Adds an element to the map as a node pair
-  void addElement(Node* elem) {
-  }
-
+  void addElement(Node* elem);
+  
   //Removed the given key from the map
   void removeElement(Object* key);
 
