@@ -39,6 +39,8 @@ void test1(){
   Node* n1 = new Node(o1, o2);
   Map* m1 = new Map();
   m1 -> addElement(n1);
+  t_true(m1->len_ == 1);
+  t_false(m1->len_ == 3);
 }
 
 //Tests to check node Constructor
@@ -46,7 +48,12 @@ void test2(){
   String* o1 = new String("Test");
   String* o2 = new String("Value");
   Node* n1 = new Node(o1, o2);
-  Node* n2 = new Node();
+  Node* n2 = new Node(s1, s2);
+  Map* m1 = new Map();
+  m1 -> addElement(n1);
+  m1 -> addElement(n2);
+  t_true(m1->len_ == 2);
+  t_false(m1->len_ == 0);
 }
 
 //Tests Map Functions
